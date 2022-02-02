@@ -2,6 +2,7 @@ package com.sda.manandrada.bms;
 
 import com.sda.manandrada.bms.model.Author;
 import com.sda.manandrada.bms.model.Book;
+import com.sda.manandrada.bms.model.Review;
 import com.sda.manandrada.bms.utils.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -29,7 +30,16 @@ public class Main {
         book.setDescription("Povesti pentru copii");
         session.save(book);
 
+        Review review=new Review();
+        review.setBook(book);
+        review.setComment("aaaaaa");
+        review.setScore(10);
+        session.save(review);
+
+
         session.close();
+
+
         SessionManager.shutDown();
 
     }

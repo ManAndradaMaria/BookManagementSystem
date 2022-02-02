@@ -2,6 +2,7 @@ package com.sda.manandrada.bms.utils;
 
 import com.sda.manandrada.bms.model.Author;
 import com.sda.manandrada.bms.model.Book;
+import com.sda.manandrada.bms.model.Review;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -27,5 +28,6 @@ public class SessionManager extends AbstractSessionManager {
     protected void setAnnotatedClasses(Configuration configuration) {
         configuration.addAnnotatedClass(Author.class);
         configuration.addAnnotatedClass(Book.class);
+        configuration.addAnnotatedClass(Review.class);
     }
 }
