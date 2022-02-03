@@ -23,6 +23,7 @@ public class Book {
     private Author author;
 
     @OneToMany(mappedBy = "book")
+    //    @OneToMany(mappedBy = "book" , fetch = FetchType.EAGER) // Asa nu
     private List<Review> reviews;
 
     public Book() {
@@ -72,6 +73,14 @@ public class Book {
 
     public void setAuthor(Author author) {
         this.author = author;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     @Override
