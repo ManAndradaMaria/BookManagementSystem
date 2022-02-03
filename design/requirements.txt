@@ -21,15 +21,17 @@ Analiza cerintelor:
 - ADD REVIEW (adding a new review for one of the existing books)
 
 Tasks :
-- BMS-1 CREATE AUTHOR
+- BMS-1 CREATE AUTHOR ->DONE
 - BMS-2 VIEW ALL THE AUTHORS
 - BMS-3 UPDATE AUTHOR
 - BMS-4 DELETE AUTHOR
 
-- BMS-5 CREATE BOOK (adding a new book - and assigning one of the existing authors)
+- BMS-5 CREATE BOOK -> DONE
 - BMS-6 VIEW ALL THE BOOKS
 - BMS-7 UPDATE BOOK
 - BMS-8 DELETE BOOK
 
 - BMS-9 VIEW ALL REVIEWS
 - BMS-10 ADD REVIEW (adding a new review for one of the existing books)
+
+- BMS-11 CREATE BOOK WITH AUTHOR (adding a new book - and assigning one of the existing authors)
