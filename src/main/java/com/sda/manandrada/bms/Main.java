@@ -1,5 +1,7 @@
 package com.sda.manandrada.bms;
 
+import com.sda.manandrada.bms.controller.AuthorController;
+import com.sda.manandrada.bms.controller.AuthorControllerImpl;
 import com.sda.manandrada.bms.controller.BookController;
 import com.sda.manandrada.bms.controller.BookControllerImpl;
 import com.sda.manandrada.bms.utils.SessionManager;
@@ -15,6 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         BookController bookController = new BookControllerImpl();
+        AuthorController authorController = new AuthorControllerImpl();
         System.out.println("BookingManagementSystem is starting.");
         String option = null;
         do {
@@ -24,6 +27,9 @@ public class Main {
             switch (option) {
                 case "1":
                     bookController.createBook();
+                    break;
+                case "2":
+                    authorController.createAuthor();
                     break;
                 case "EXIT":
                     System.out.println("Finish");
@@ -40,6 +46,8 @@ public class Main {
 
     private static void printMenu() {
         System.out.println("1:CREATE BOOK");
+        System.out.println("2:CREATE AUTHOR");
         System.out.println("EXIT:EXIT");
+
     }
 }
