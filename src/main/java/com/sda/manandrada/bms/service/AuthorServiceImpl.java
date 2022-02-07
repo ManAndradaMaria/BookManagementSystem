@@ -4,6 +4,8 @@ import com.sda.manandrada.bms.model.Author;
 import com.sda.manandrada.bms.repository.AuthorRepository;
 import com.sda.manandrada.bms.repository.AuthorRepositoryImpl;
 
+import java.util.List;
+
 public class AuthorServiceImpl implements AuthorService {
 
     private AuthorRepository authorRepository;
@@ -19,5 +21,11 @@ public class AuthorServiceImpl implements AuthorService {
         author.setLastName(lastName);
 
         authorRepository.createAuthor(author);
+    }
+
+    @Override
+    public List<Author> findAll() {
+        List<Author> authors = authorRepository.findAll();
+        return authors;
     }
 }

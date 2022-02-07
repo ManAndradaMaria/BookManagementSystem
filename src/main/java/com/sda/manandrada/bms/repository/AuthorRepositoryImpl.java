@@ -5,6 +5,8 @@ import com.sda.manandrada.bms.utils.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 public class AuthorRepositoryImpl implements AuthorRepository {
 
     @Override
@@ -39,5 +41,14 @@ public class AuthorRepositoryImpl implements AuthorRepository {
         session.close();
         return author;//returmeaza de ceva de tip autor
 
+    }
+
+    @Override
+    public List<Author> findAll() {
+        Session session = SessionManager.getSessionFactory().openSession();
+        List<Author> authors = session.createQuery("from Author", Author.class).list();
+
+        session.close();
+        return authors;
     }
 }
