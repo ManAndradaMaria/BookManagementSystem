@@ -24,14 +24,16 @@ public class Main {
             printMenu();
             System.out.println("Please insert your option: ");
             option = SCANNER.nextLine();
-            switch (option) {
-                case "1":
+            MenuOption menuOption = findByOption(option);
+
+            switch (menuOption) {
+                case CREATE_BOOK:
                     bookController.createBook();
                     break;
-                case "2":
+                case CREATE_AUTHOR:
                     authorController.createAuthor();
                     break;
-                case "EXIT":
+                case EXIT:
                     System.out.println("Finish");
                     break;
                 default:
@@ -45,9 +47,26 @@ public class Main {
     }
 
     private static void printMenu() {
-        System.out.println("1:CREATE BOOK");
-        System.out.println("2:CREATE AUTHOR");
-        System.out.println("EXIT:EXIT");
+        System.out.println("Create Menu");
+        // System.out.println("1:CREATE BOOK");
+        // System.out.println("2:CREATE AUTHOR");
+        // System.out.println("EXIT:EXIT");
+        //MenuOption menuOption=MenuOption.CREATE_BOOK; //in loc de tot ce am pus cometariu
+        //sau
+        //   MenuOption.values(); //values ret un array cu toate vall menuOption
+        for (MenuOption menuOption : MenuOption.values()) {
+            if (!(menuOption.equals(MenuOption.UNDEFINED))) {
+                System.out.println(menuOption.getOption() + " " + menuOption.getDescription());
+            }
+        }
+    }
 
+    public static MenuOption findByOption(String option) {
+        for (MenuOption menuOption : MenuOption.values()) {
+            if (menuOption.getOption().equals(option)) {
+                return menuOption;
+            }
+        }
+        return MenuOption.UNDEFINED;
     }
 }

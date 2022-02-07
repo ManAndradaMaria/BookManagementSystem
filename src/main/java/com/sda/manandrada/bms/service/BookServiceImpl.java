@@ -6,7 +6,7 @@ import com.sda.manandrada.bms.repository.BookRepositoryImpl;
 
 public class BookServiceImpl implements BookService {
 
-    private BookRepository bookRepository;//cand declar folosec tot timpul interfata
+    private BookRepository bookRepository;//cand declar folosec tot tipul interfata
 
     public BookServiceImpl() {
         bookRepository = new BookRepositoryImpl();
