@@ -33,6 +33,9 @@ public class Main {
                 case CREATE_AUTHOR:
                     authorController.createAuthor();
                     break;
+                case CREATE_BOOK_WITH_AUTHOR:
+                    bookController.createBookWithAuthor();
+                    break;
                 case EXIT:
                     System.out.println("Finish");
                     break;

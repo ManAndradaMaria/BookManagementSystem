@@ -4,7 +4,8 @@ public enum MenuOption {
     CREATE_BOOK("1", "Create Book"),
     CREATE_AUTHOR("2", "Create Author"),
     CREATE_REVIEW("3", "Create Review"),
-    EXIT("Exit", "Exit the application"),
+    CREATE_BOOK_WITH_AUTHOR("4", "Create book with author"),
+    EXIT("Exit", "Close the application"),
     UNDEFINED("", "Menu option non-defined");
 
     //encapsulare private
@@ -25,6 +26,5 @@ public enum MenuOption {
 
     public String getDescription() {
         return description;
-
     }
 }

@@ -29,4 +29,15 @@ public class AuthorRepositoryImpl implements AuthorRepository {
         }
         session.close();
     }
+
+    @Override
+    public Author findById(Integer id) {
+        //id e cheie primara
+        Session session = SessionManager.getSessionFactory().openSession();
+        Author author = session.find(Author.class, id);//cautam un id pt autorul respectiv
+
+        session.close();
+        return author;//returmeaza de ceva de tip autor
+
+    }
 }
