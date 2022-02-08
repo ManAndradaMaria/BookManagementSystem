@@ -3,6 +3,7 @@ package com.sda.manandrada.bms.controller;
 import com.sda.manandrada.bms.model.Author;
 import com.sda.manandrada.bms.service.AuthorService;
 import com.sda.manandrada.bms.service.AuthorServiceImpl;
+import com.sda.manandrada.bms.service.exceptions.AuthorNotFoundExceptions;
 
 import javax.print.DocFlavor;
 import java.util.List;
@@ -38,5 +39,24 @@ public class AuthorControllerImpl implements AuthorController {
             System.out.println("ID: " + author.getId());
             System.out.println("-------------------------------------");
         }
+    }
+
+    @Override
+    public void updateAuthor() {
+
+        System.out.println("Update author:");
+        System.out.println("Insert id:");
+        int id = Integer.parseInt(SCANNER.nextLine());
+        System.out.println("Please insert firstName:");
+        String firstName = SCANNER.nextLine();
+        System.out.println("Please insert lastName:");
+        String lastName = SCANNER.nextLine();
+
+        try {
+            authorService.update(id, firstName, lastName);
+        } catch (AuthorNotFoundExceptions authorNotFoundExceptions) {
+            System.out.println("Author not found!");
+        }
+
     }
 }

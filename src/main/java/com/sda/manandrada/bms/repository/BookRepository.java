@@ -9,5 +9,4 @@ public interface BookRepository extends BaseRepository<Book, Integer> {
 
   //  Book findById(Integer id);
 
-
 }

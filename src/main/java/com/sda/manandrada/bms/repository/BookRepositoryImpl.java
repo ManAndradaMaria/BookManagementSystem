@@ -1,6 +1,9 @@
 package com.sda.manandrada.bms.repository;
 
 import com.sda.manandrada.bms.model.Book;
+import com.sda.manandrada.bms.utils.SessionManager;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 //clasa pt implementare
 public class BookRepositoryImpl extends BaseRepositoryImpl<Book, Integer> implements BookRepository {
@@ -33,4 +36,5 @@ public class BookRepositoryImpl extends BaseRepositoryImpl<Book, Integer> implem
 
         createEntity(book);
     }
+
 }

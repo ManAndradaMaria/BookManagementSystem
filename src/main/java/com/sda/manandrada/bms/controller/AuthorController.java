@@ -5,4 +5,6 @@ public interface AuthorController {
     void createAuthor();
 
     void viewAllAuthors();
+
+    void updateAuthor();
 }

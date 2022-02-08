@@ -1,11 +1,12 @@
 package com.sda.manandrada.bms.repository;
 
 import com.sda.manandrada.bms.model.Author;
+import com.sda.manandrada.bms.model.Book;
 import com.sda.manandrada.bms.utils.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-public class BaseRepositoryImpl<T, ID> implements  BaseRepository<T,ID>{//T e author aici, id e tipul id-ului
+public class BaseRepositoryImpl<T, ID> implements BaseRepository<T, ID> {//T e author aici, id e tipul id-ului
 
     private final Class<T> clazz;
 
@@ -34,12 +35,31 @@ public class BaseRepositoryImpl<T, ID> implements  BaseRepository<T,ID>{//T e au
         }
         session.close();
     }
+
     public T findById(ID id) { //T este entitatea, poate fi book review ...
 
         Session session = SessionManager.getSessionFactory().openSession();
-        T entity=session.find(clazz,id);//Author.class l-am inlocuit cu clazz
+        T entity = session.find(clazz, id);//Author.class l-am inlocuit cu clazz
 
         session.close();
         return entity;
+    }
+
+    @Override
+    public void update(T entity) {
+        Session session = SessionManager.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+            session.update(entity);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+        session.close();
     }
 }
