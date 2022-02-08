@@ -9,4 +9,6 @@ public interface AuthorService {
     void createAuthor(String firstName, String lastName);
 
     List<Author> findAll();
+
+    void importAuthorsFromFile();
 }

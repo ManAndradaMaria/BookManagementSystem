@@ -4,6 +4,10 @@ import com.sda.manandrada.bms.controller.AuthorController;
 import com.sda.manandrada.bms.controller.AuthorControllerImpl;
 import com.sda.manandrada.bms.controller.BookController;
 import com.sda.manandrada.bms.controller.BookControllerImpl;
+import com.sda.manandrada.bms.service.AuthorService;
+import com.sda.manandrada.bms.service.AuthorServiceImpl;
+import com.sda.manandrada.bms.service.BookService;
+import com.sda.manandrada.bms.service.BookServiceImpl;
 import com.sda.manandrada.bms.utils.SessionManager;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
@@ -18,6 +22,13 @@ public class Main {
 
         //un apel de SessionManager.getSessionFactory()
         SessionManager.getSessionFactory();//asa facem sa apara initializarea la inceput.
+
+        //citirea fisierului
+        AuthorService authorService=new AuthorServiceImpl();
+        authorService.importAuthorsFromFile();
+
+        BookService bookService=new BookServiceImpl();
+        bookService.importBooksFromFile();
 
         BookController bookController = new BookControllerImpl();
         AuthorController authorController = new AuthorControllerImpl();
