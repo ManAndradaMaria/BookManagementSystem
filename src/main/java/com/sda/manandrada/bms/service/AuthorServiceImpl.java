@@ -21,6 +21,7 @@ public class AuthorServiceImpl implements AuthorService {
         author.setLastName(lastName);
 
         authorRepository.createAuthor(author);
+
     }
 
     @Override

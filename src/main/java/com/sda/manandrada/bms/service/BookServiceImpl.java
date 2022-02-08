@@ -7,7 +7,6 @@ import com.sda.manandrada.bms.repository.AuthorRepositoryImpl;
 import com.sda.manandrada.bms.repository.BookRepository;
 import com.sda.manandrada.bms.repository.BookRepositoryImpl;
 import com.sda.manandrada.bms.service.exceptions.AuthorNotFoundExceptions;
-import javassist.NotFoundException;
 
 public class BookServiceImpl implements BookService {
 
@@ -26,6 +25,7 @@ public class BookServiceImpl implements BookService {
         book.setIsbn(isbn);
         book.setTitle(title);
         book.setDescription(description);
+
         bookRepository.createBook(book);
     }
 
@@ -42,6 +42,7 @@ public class BookServiceImpl implements BookService {
             book.setAuthor(author);
 
             bookRepository.createBook(book);
+
         }else{
             throw  new AuthorNotFoundExceptions("Author not found",author_id);
         }

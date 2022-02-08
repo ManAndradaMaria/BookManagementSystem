@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         //un apel de SessionManager.getSessionFactory()
-        SessionManager.getSessionFactory();
+        SessionManager.getSessionFactory();//asa facem sa apara initializarea la inceput.
 
         BookController bookController = new BookControllerImpl();
         AuthorController authorController = new AuthorControllerImpl();

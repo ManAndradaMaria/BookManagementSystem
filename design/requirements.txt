@@ -27,11 +27,13 @@ Tasks :
 - BMS-4 DELETE AUTHOR
 
 - BMS-5 CREATE BOOK -> DONE
-- BMS-6 VIEW ALL THE BOOKS
-- BMS-7 UPDATE BOOK
-- BMS-8 DELETE BOOK
+- BMS-6 VIEW ALL THE BOOKS // homewoork
+- BMS-7 UPDATE BOOK // homewoork
+- BMS-8 DELETE BOOK // homewoork
 
 - BMS-9 VIEW ALL REVIEWS
 - BMS-10 ADD REVIEW (adding a new review for one of the existing books)
 
 - BMS-11 CREATE BOOK WITH AUTHOR (adding a new book - and assigning one of the existing authors) ->DONE
+
+- BMS-12 IMPORT BOKS WITH AUTHORS FROM TEXT FILE
