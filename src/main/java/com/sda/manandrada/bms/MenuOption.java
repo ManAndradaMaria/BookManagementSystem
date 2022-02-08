@@ -5,8 +5,9 @@ public enum MenuOption {
     CREATE_AUTHOR("2", "Create Author"),
     CREATE_REVIEW("3", "Create Review"),
     CREATE_BOOK_WITH_AUTHOR("4", "Create book with author"),
-    VIEW_ALL_AUTHOR("5","View all author"),
-    UPDATE_AUTHOR("6","Update author"),
+    VIEW_ALL_AUTHOR("5", "View all author"),
+    UPDATE_AUTHOR("6", "Update author"),
+    DELETE_AUTHOR("7", "Delete Author"),
     EXIT("Exit", "Close the application"),
     UNDEFINED("", "Menu option non-defined");
 

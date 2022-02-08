@@ -9,4 +9,6 @@ public interface BaseRepository <T,ID>  {
 
     void update(T entity);
 
+    void delete(T entity);
+
 }

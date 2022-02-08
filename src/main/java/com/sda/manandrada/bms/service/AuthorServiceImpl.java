@@ -82,4 +82,14 @@ public class AuthorServiceImpl implements AuthorService {
             throw new AuthorNotFoundExceptions("Author not found", id);
         }
     }
+
+    @Override
+    public void delete(Integer id) throws AuthorNotFoundExceptions {
+        Author author = authorRepository.findById(id);
+        if (author != null) {
+            authorRepository.delete(author);
+        } else {
+            throw new AuthorNotFoundExceptions("Author not found", id);
+        }
+    }
 }

@@ -15,4 +15,6 @@ public interface AuthorService {
 
     void update(Integer id,String firstName, String lastName) throws AuthorNotFoundExceptions;
 
+    void delete(Integer id) throws AuthorNotFoundExceptions;
+
 }
