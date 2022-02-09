@@ -12,10 +12,28 @@ Analiza cerintelor:
 - UPDATE AUTHOR
 - DELETE AUTHOR
 
-- CREATE BOOK (adding a new book - and assigning one of the existing authors)
-- VIEW ALL THE BOOKS
-- UPDATE BOOK
-- DELETE BOOK
+USER:
+-CREATE USER
+-CREATE USER WITH DEPARTMENT/S //ON OR MANY
+-VIEW USER WITH DEPARTMENTS
+-UPDATE USER
+-DELETE USER
+-LIST ALL USER
+
+User:
+-Create user
+-Create user with department(s) // one or many
+-View user with departments
+-Update user
+-Delete user
+-List all users
+
+Department:
+-Create department
+-View list of departments
+-Update department
+-Delete department
+-View all users from a department
 
 - VIEW ALL REVIEWS
 - ADD REVIEW (adding a new review for one of the existing books)
@@ -31,9 +49,30 @@ Tasks :
 - BMS-7 UPDATE BOOK // homewoork
 - BMS-8 DELETE BOOK // homewoork
 
-- BMS-9 VIEW ALL REVIEWS
+- BMS-9 VIEW ALL REVIEWS FOR BOOK  -> DONE
 - BMS-10 ADD REVIEW (adding a new review for one of the existing books) ->DONE
 
 - BMS-11 CREATE BOOK WITH AUTHOR (adding a new book - and assigning one of the existing authors) ->DONE
 
 - BMS-12 IMPORT BOKS WITH AUTHORS FROM TEXT FILE -> DONE
+
+- BMS-13 VALIDATE REVIEW SCORE(BETWEEN 1 AND 10)// homewoork
+
+USER:
+User:
+- BMS 14 Create user
+- BMS 15 Create user with department(s) // one or many
+- BMS 16 View user with departments
+- BMS 17 Update user
+- BMS 18 Delete user
+- BMS 19 List all users
+
+Department:
+- BMS 20 Create department
+- BMS 21 View list of departments
+- BMS 22 Update department
+- BMS 23 Delete department
+- BMS 24 View all users from a department
+
+
+

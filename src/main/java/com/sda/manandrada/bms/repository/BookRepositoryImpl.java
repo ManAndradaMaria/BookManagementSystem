@@ -37,4 +37,17 @@ public class BookRepositoryImpl extends BaseRepositoryImpl<Book, Integer> implem
         createEntity(book);
     }
 
+    @Override
+    public Book findByIdAndLoadReviews(int id) {
+
+        Session session = SessionManager.getSessionFactory().openSession();
+
+        Book book = session.find(Book.class, id);
+        System.out.println(book.getReviews().size());//incarcarea datelor in interiorul sesiunii
+
+        session.close();
+        return book;
+    }
 }
+
+

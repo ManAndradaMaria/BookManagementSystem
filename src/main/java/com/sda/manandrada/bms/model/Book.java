@@ -11,10 +11,13 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
+
     @Column(name = "isbn")
     private String isbn;
+
     @Column(name = "title")
     private String title;
+
     @Column(name = "description")
     private String description;
 
@@ -22,7 +25,8 @@ public class Book {
     @JoinColumn(name = "author_id")
     private Author author;
 
-    @OneToMany(mappedBy = "book")
+    //@OneToMany(mappedBy = "book", fetch = FetchType.EAGER am rez problma exceptie lazy dar asa nu!!!!
+    @OneToMany(mappedBy = "book")//mergem, si schimbam metoda de find byId din Repository
     //    @OneToMany(mappedBy = "book" , fetch = FetchType.EAGER) // Asa nu
     private List<Review> reviews;
 
