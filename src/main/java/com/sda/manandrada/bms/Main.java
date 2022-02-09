@@ -1,9 +1,7 @@
 package com.sda.manandrada.bms;
 
-import com.sda.manandrada.bms.controller.AuthorController;
-import com.sda.manandrada.bms.controller.AuthorControllerImpl;
-import com.sda.manandrada.bms.controller.BookController;
-import com.sda.manandrada.bms.controller.BookControllerImpl;
+import com.sda.manandrada.bms.controller.*;
+import com.sda.manandrada.bms.model.Review;
 import com.sda.manandrada.bms.service.AuthorService;
 import com.sda.manandrada.bms.service.AuthorServiceImpl;
 import com.sda.manandrada.bms.service.BookService;
@@ -32,6 +30,7 @@ public class Main {
 
         BookController bookController = new BookControllerImpl();
         AuthorController authorController = new AuthorControllerImpl();
+        ReviewController reviewController = new ReviewControlIerImpl();
         System.out.println("BookingManagementSystem is starting.");
         String option = null;
         do {
@@ -41,14 +40,8 @@ public class Main {
             MenuOption menuOption = findByOption(option);
 
             switch (menuOption) {
-                case CREATE_BOOK:
-                    bookController.createBook();
-                    break;
                 case CREATE_AUTHOR:
                     authorController.createAuthor();
-                    break;
-                case CREATE_BOOK_WITH_AUTHOR:
-                    bookController.createBookWithAuthor();
                     break;
                 case VIEW_ALL_AUTHOR:
                     authorController.viewAllAuthors();
@@ -59,8 +52,21 @@ public class Main {
                 case DELETE_AUTHOR:
                     authorController.deleteAuthor();
                     break;
+
+                case CREATE_BOOK:
+                    bookController.createBook();
+                    break;
+                case CREATE_BOOK_WITH_AUTHOR:
+                    bookController.createBookWithAuthor();
+                    break;
+
+                case ADD_REVIEW:
+                    reviewController.addReview();
+                    break;
+
+
                 case EXIT:
-                    System.out.println("Finish");
+                    System.out.println("Bye bye");
                     break;
                 default:
                     System.out.println("Option is not valid!");
